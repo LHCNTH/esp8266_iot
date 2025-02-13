@@ -24,10 +24,10 @@ unsigned long lastControll = 0;
 // còn chế độ false là người dùng bật/tắt đèn
 
 char auth[] = "ShTQMdWYP9U-vNo-tpdQ0XsX5t7K2NBM";  
-// char ssid[] = "LLHTDQC@+";               
-// char pass[] = "bfbfbfbf";               
-char ssid[] = "WIFI_NGU_NHU_BO";           
-char pass[] = "khongcomatkhau123@";        
+char ssid[] = "LLHTDQC@+";               
+char pass[] = "bfbfbfbf";               
+// char ssid[] = "WIFI_NGU_NHU_BO";           
+// char pass[] = "khongcomatkhau123@";        
 
 void setup() {
     Serial.begin(9600);
@@ -74,7 +74,7 @@ void updateSensorData() {
 
         // userControll: tự động bật/tắt đèn dựa theo nhiệt độ
         if (!userControll) {
-          if (temperature <= 22) {
+          if (temperature <= 23) {
               ledState = HIGH;  // Bật LED
           } else {
               ledState = LOW;   // Tắt LED
