@@ -128,7 +128,7 @@ void onDisplay7SEG(){
     static unsigned long lastBlink = 0;
     static bool showColon = false;
     DateTime now = rtc.now();  // Lấy thời gian hiện tại từ RTC
-    now = now + TimeSpan(0, 0, 0, 48); // Cộng thêm 32 giây
+    now = now + TimeSpan(0, 0, 0, 32); // Cộng thêm 32 giây
     if (millis() - lastBlink >= 1000) {  
         showColon = !showColon;  
         lastBlink = millis();
@@ -146,7 +146,7 @@ void loop() {
     Blynk.run();
     onDisplay7SEG();  // Luôn cập nhật LED 7 đoạn
     DateTime now = rtc.now();
-    now = now + TimeSpan(0, 0, 0, 48);
+    now = now + TimeSpan(0, 0, 0, 32);
 
     // Kiểm tra xem có cần chuyển đổi hiển thị LCD không (mỗi 5s)
     if (millis() - lastLCDSwitch >= lcdSwitchInterval) {
@@ -193,7 +193,7 @@ void loop() {
 // Hiển thị thời gian thực lên LCD
 void displayTimeLCD() {
     DateTime time = rtc.now(); 
-    DateTime newTime = time + TimeSpan(0, 0, 0, 48);
+    DateTime newTime = time + TimeSpan(0, 0, 0, 32);
 
     int day = time.day();
     int month = time.month();
